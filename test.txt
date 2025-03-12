@@ -1,0 +1,22 @@
+過程 :
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-pip
+sudo apt-get install python3-numpy
+sudo apt-get update
+sudo apt-get install python3-opencv
+python3 -c "import cv2; print(cv2.__version__)"這條命令應該會顯示出安裝的OpenCV版本，確認無誤表明安裝成功
+
+--------------------------以上為上週沒做或沒成功地要先安裝--------------------------------
+
+git clone https://github.com/Andy13202/lab05.git
+cd lab04
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3-pip python3-opencv -y
+pip3 install numpy tflite-runtime
+wget https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.tgz
+tar -xvzf coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.tgz
+mv ssd_mobilenet_v1_1.0_quant.tflite ssd_mobilenet_v1.tflite
+wget https://raw.githubusercontent.com/google-coral/edgetpu/master/test_data/coco_labels.txt
+nano object_detection.py
+python3 object_detection.py
