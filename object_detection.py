@@ -2,13 +2,10 @@ import cv2
 import numpy as np
 import tflite_runtime.interpreter as tflite
 
-# 🚀 學生必須手動在這裡新增要偵測的物件 🚀
-ALLOWED_CLASSES = []  # 🔴 預設為空，學生要自己手動加 "cat", "dog", "car" 等
+ALLOWED_CLASSES = [ 'person', 'oven' ]
 
 # 如果學生沒新增任何類別，就不執行偵測
 if not ALLOWED_CLASSES:
-    print("❌ 錯誤：請在程式碼內 `ALLOWED_CLASSES` 中新增要偵測的物件！")
-    print("👉 例如： ALLOWED_CLASSES = ['person', 'dog']")
     exit()
 
 # 載入 TensorFlow Lite 模型
@@ -26,7 +23,7 @@ with open(labels_path, "r") as f:
     labels = {i: line.strip() for i, line in enumerate(f.readlines())}
 
 # 設定信心度閾值
-CONFIDENCE_THRESHOLD = 0.5  
+CONFIDENCE_THRESHOLD = 0.42  
 
 # 讀取圖片
 image_path = "test.jpg"
@@ -88,4 +85,4 @@ for obj, conf in detected_objects:
     print(f"{obj} - 信心度: {conf:.2f}")
 
 if not detected_objects:
-    print("❌ 未偵測到符合條件的物體，請嘗試降低信心度或修改 ALLOWED_CLASSES。")
+    print("❌ 未偵測到符合條件的物體")
