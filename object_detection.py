@@ -23,7 +23,7 @@ with open(labels_path, "r") as f:
     labels = {i: line.strip() for i, line in enumerate(f.readlines())}
 
 # 設定信心度閾值
-CONFIDENCE_THRESHOLD = 0.42  
+CONFIDENCE_THRESHOLD = 0.4  
 
 # 讀取圖片
 image_path = "hotpot.png"
