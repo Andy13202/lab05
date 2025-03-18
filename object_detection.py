@@ -42,7 +42,7 @@ scores = interpreter.get_tensor(output_details[2]['index'])[0]  # 物件分數�
 # 解析並標記圖片上的物件
 h, w, _ = image.shape
 for i in range(len(scores)):
-    if scores[i] > 0.5:  # 只顯示高信心度的結果
+    if scores[i] > 0.3:  # 只顯示高信心度的結果
         y_min, x_min, y_max, x_max = boxes[i]
         x_min, x_max = int(x_min * w), int(x_max * w)
         y_min, y_max = int(y_min * h), int(y_max * h)
