@@ -26,7 +26,7 @@ with open(labels_path, "r") as f:
 CONFIDENCE_THRESHOLD = 0.42  
 
 # 讀取圖片
-image_path = "test.jpg"
+image_path = "hotpot.png"
 image = cv2.imread(image_path)
 
 # 確保圖片成功讀取
