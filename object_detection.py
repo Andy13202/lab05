@@ -117,4 +117,4 @@ for obj, conf in detected_objects:
     print(f"{obj} - 信心度: {conf:.2f}")
 
 if not detected_objects:
-    print("❌ 未偵測到符合條件的物體")
+    print("❌ 未偵測到符合條件的物體(驗收一)")
