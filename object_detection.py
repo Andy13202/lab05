@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import tflite_runtime.interpreter as tflite
 
-ALLOWED_CLASSES = [ 'person' ]
+ALLOWED_CLASSES = [ 'person' ] # 偵測的目標
 
 # 如果學生沒新增任何類別，就不執行偵測
 if not ALLOWED_CLASSES:
