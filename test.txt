@@ -16,7 +16,7 @@ sudo apt install python3-pip python3-opencv -y
 pip3 install numpy tflite-runtime
 wget https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
 unzip coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
-mv ssd_mobilenet_v1_1.0_quant.tflite ssd_mobilenet_v1.tflite
+mv detect.tflite ssd_mobilenet_v1.tflite
 wget https://raw.githubusercontent.com/google-coral/test_data/master/coco_labels.txt
 nano object_detection.py
 python3 object_detection.py
