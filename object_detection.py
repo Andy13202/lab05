@@ -23,7 +23,7 @@ with open(labels_path, "r") as f:
     labels = {i: line.strip() for i, line in enumerate(f.readlines())}
 
 # 設定信心度閾值
-CONFIDENCE_THRESHOLD = 0.4  
+CONFIDENCE_THRESHOLD = 0.4
 
 # 讀取圖片
 image_path = "hotpot.png"
@@ -73,6 +73,38 @@ for i in range(len(scores)):
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         
         detected_objects.append((class_name, scores[i]))
+
+# 印出模型輸出( 驗收2 用)
+print_model_output = True #是否印出模型輸出 (是 : 設為True, 否 : 設為False)
+
+if print_model_output == True :
+    print("以下為 boxes 的 output ( 4個1組 ) :")
+    print(boxes)
+    print('\n')
+
+    print("以下為 classes 的 output ( 1個1組 ) :")
+    print(classes)
+    print('\n')
+
+    print("以下為 scores 的 output ( 1個1組 ) :")
+    print(scores)
+    print('\n')
+
+# =======驗收2部分=======
+
+object_number = 0 # 此變數用於儲存特定種類物品的數量
+scores_list = [] # 此變數用於儲存每個物件的信心度
+
+# =======請在此範圍內撰寫你的code=======
+
+
+# =======請在此範圍內撰寫你的code=======
+
+print("這張圖片中偵測到" + str(object_number) + "個")
+print("其個別信心度如下:")
+print(scores_list)
+
+# =======驗收2部分=======
 
 # 顯示結果
 cv2.imshow("Object Detection", image)
